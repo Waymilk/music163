@@ -1,0 +1,6 @@
+<!--miniprogram/pages/playlist/playlist.wxml-->
+<swiper>
+  <swiper-item wx:for="swiperImgUrls" wx:key="index">
+    <image src="{{item.url}}"></image>
+  </swiper-item>
+</swiper>
