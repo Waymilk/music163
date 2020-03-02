@@ -89,14 +89,17 @@ Page({
     wx.cloud.callFunction({
       name: 'music',
       data: {
+        $url:'playlist',
         start: listLength,
         count: 15
       }
     }).then(res => {
-      this.setData({
-        playlist: this.data.playlist.concat(res.result.data),
-        total: res.result.total
-      })
+      if (res.result) {
+        this.setData({
+          playlist: this.data.playlist.concat(res.result.data),
+          total: res.result.total
+        })
+      }
       wx.stopPullDownRefresh()
       wx.hideLoading()
     })

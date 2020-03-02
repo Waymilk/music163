@@ -31,6 +31,11 @@ Component({
       }else if(numLength >= 9){
         return (num / 100000000).toFixed(2) + '亿'
       }
+    },
+    goToMusiclist(){
+      wx.navigateTo({
+        url: `../../pages/musiclist/musiclist?id=${this.properties.playlist.id}`,
+      })
     }
   }
 })
